@@ -1,0 +1,26 @@
+!!!
+%html
+	%head
+		%title 
+			= title
+		%meta{:charset => "utf-8"}
+		= stylesheet_link_tag "application", :media => "all"
+		= javascript_include_tag 'application'
+		= csrf_meta_tags
+	%body
+		%div#wrapper
+			%h1 StagerCMS
+
+			%div.navbar
+				%div.navbar-inner
+					%div.brand Main Menu
+					%ul.nav
+						%li= link_to t('breadcrumbs.home'), root_path
+						%li= link_to t('breadcrumbs.news'), newses_path
+						-@menu_items_all.each do |menu_item|
+							%li= link_to menu_item.title, static_page_path(menu_item.static_page)
+			%div
+				= render_breadcrumbs
+			= yield
+			.clear
+			= raw copyright

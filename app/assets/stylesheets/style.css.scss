@@ -1,0 +1,71 @@
+@import "bootstrap";
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+}
+#wrapper{
+	width: 980px;
+	margin: 0 auto;
+	background-color: white;
+	min-height: 100%;
+	display: table;
+}
+.raleted{
+	margin-bottom:15px;
+	margin-top:15px;
+	padding:10px;
+	background:#eee;
+}
+.mod_raleted_title{
+	font:bold 25px Arial;
+	border-bottom:1px solid grey;
+	margin-bottom:10px;
+}
+.recent_new{
+	width:300px;
+	padding:5px 0;
+	position:relative;
+}
+#recent_new_0{
+	margin-left:0;
+}
+.clear{
+	clear:both;
+}
+.img_l_r{
+	width:60px;
+	height:auto;
+	margin:0 10px 0 0;
+	&:hover{
+	}
+}
+.content640{
+	width:640px;
+	float:left;
+}
+.raleted3{
+	margin-bottom:15px;
+	margin-top:15px;
+	padding:10px;
+	background:#eee;
+	width:310px;	
+	margin-left:650px;
+}
+.link{
+	float:left;
+	position:absolute;
+	left:0;
+	top:0;
+	padding-left:70px;
+}
+.relative{
+	position: relative;
+	vertical-align: top;
+}
+.avatar_img{
+	width: 60px;
+}
+.fl_l{
+	float:left;
+}

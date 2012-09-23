@@ -1,0 +1,7 @@
+- if !user_signed_in?
+	.raleted3
+		.mod_raleted_title
+			= t('modules.login.title')
+		= link_to t('modules.login.link_title'), user_session_path
+		или
+		= link_to t('modules.login.reg_link_title'), new_user_registration_path

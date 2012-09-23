@@ -1,0 +1,4 @@
+%h3 Новости
+-@news.each do |new|
+	= render 'new_item', new: new
+= paginate @news

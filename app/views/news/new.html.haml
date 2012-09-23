@@ -1,0 +1,33 @@
+%h3
+	Добавить новость
+
+= form_for @new, :url => news_index_path do |f|
+	/ %div= f.error_messages
+	-if @new.errors.any?
+		.alert.alert-error
+			%b
+				Возникло
+				= pluralize(@new.errors.count, "ошибка", "ошибки")
+				во время добавления новости в БД!
+			- @new.errors.full_messages.each do |msg|
+				%li
+					= msg
+
+	%div= f.label :title, "Название:"
+	%div= f.text_field :title
+
+	%div= f.label :content_small, 'Краткий текст материала'
+	%div= f.text_area :content_small, :class => "ckeditor"
+
+	%div= f.label :content_full, 'Полный текст материала'
+	%div= f.text_area :content_full, :class => "ckeditor"
+
+	%div
+		= f.check_box :status, :class => 'fl_l'
+		= f.label :status, 'Новость активна?'
+
+	%div
+		= f.check_box :favourite, :class => 'fl_l'
+		= f.label :favourite, 'Отображать на главной?'
+
+	%div= f.submit 'Добавить'

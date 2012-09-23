@@ -1,0 +1,18 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world" 
+  adminpanel:
+    news:
+      display: 'Display'
+      favourite: 'Favourite'
+      title: 'Title'
+      author: 'Author'
+      created_at: 'Create'
+      updated_at: 'Update'
+    staticpages:
+      title: 'Title'
+      status: 'Display'
+      created_at: 'Create'
+      updated_at: 'Update'    	

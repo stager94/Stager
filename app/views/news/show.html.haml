@@ -1,0 +1,9 @@
+%h3= @new.title
+- if !current_user.nil? && current_user.role
+	%div{:style => 'margin:0 0 10px 0;'}
+		[
+		= link_to 'Удалить', news_path[@new.id], :action => :destory, :method => :delete, :confirm => "Вы действительно хотите удалить новость ''#{@new.title}''? Данное действие необратимо!"
+		|
+		= link_to 'Редактировать', edit_news_path, :action => :edit, :method => :get
+		]
+%div= raw @new.content_full

@@ -1,0 +1,20 @@
+-@i = 0
+.raleted3
+	.related2
+		.mod_raleted_title
+			= t('modules.recent')
+
+		-@recent_news.each do |new|
+			- doc = Nokogiri::HTML(new.content_full)
+			- result32 = doc.search('img').first;
+			- if result32
+				- result3 = doc.search('img').first['src'];
+
+			- new.content_small.gsub!(/(<[^>]*>)|\n|\t/, "") 
+
+			%div.recent_new#recent_new{ id: @i }
+				%img{:src => result3, :class => "img_l_r"}
+				%div.link
+					= link_to new.title, new_path(new['id'])
+				/ = raw new.content_small
+				-@i = @i+1

@@ -1,0 +1,29 @@
+- if user_signed_in?
+	.raleted3
+		.relative
+			.mod_raleted_title
+				= t('modules.logout.title')
+
+			%table
+				%tr
+					%td{:style => 'vertical-align:top;'}
+						%img{src: current_user.avatar, class: 'avatar_img'}
+					%td{:style => 'vertical-align:top;'}
+						Здравствуйте, 
+						%b
+							= current_user.nickname
+						!
+						%div
+							Группа: 
+							%b= current_user.role? ? "Модератор" : "Пользователь"
+
+						%div
+							Последний визит
+							%b
+								= current_user.last_sign_in_at.in_time_zone('Kyiv').strftime("%m.%d.%Y %H:%M")
+
+						%div
+							- if current_user.role == true
+								= link_to t('modules.logout.addnew'), new_news_path, :method => :get
+						%div
+							= link_to t('modules.logout.out'), destroy_user_session_path, :method=> "delete"

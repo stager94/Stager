@@ -1,0 +1,11 @@
+%div.news_list#news{ id: new.id }
+	%h4= link_to new.title, new_path(new['id'])
+	 
+	%h6
+		= distance_of_time_in_words_to_now(new.created_at, false)
+		назад
+		by
+		= new.user.nickname
+		
+	%div= raw new.content_small
+	%hr

@@ -1,0 +1,6 @@
+.raleted3
+	.mod_raleted_title
+		= t('modules.random')
+	= link_to @random_news.title, new_path(@random_news['id'])
+	%div
+	= raw @random_news.content_small.gsub!(/(<[^>]*>)|\n|\t/, "")
